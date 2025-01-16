@@ -1,0 +1,92 @@
+.login{
+    width: 100%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.7);
+    /* Şeffaf arka plan */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login h2 {
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.login form {
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.login form .input-group {
+    margin-bottom: 15px;
+}
+
+.login form .input-group label {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login form .input-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.login form .input-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.login form .btn {
+    background-color: #5a390e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login form .btn:hover {
+    background-color: #a37f4f;
+}
+
+.login .Kayit {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login .Kayit a {
+    color: #aa8562;
+    text-decoration: none;
+}
+
+.login .Kayit a:hover {
+    text-decoration: underline;
+}
+
+.login .Kayit{
+    color: aliceblue;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://cdn.kahvekulturu.com.tr/img/1/25337-b-hahve-kulturu-acildi-25337.webp");
+    background-position: center;
+    background-size: cover;
+}

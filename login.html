@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahve Sipariş Sitesi- Giriş Sayfası</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login">
+        <h2>Giriş Sayfasına Hoş Geldiniz...</h2>
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="input-group">
+                <label for="kullaniciadi">Kullanıcı Adı:</label>
+                <input type="text" id="kullaniciadi" name="kullaniciadi" placeholder="Kullanıcı Adı Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="sifre">Şifre:</label>
+                <input type="password" id="sifre" name="sifre" placeholder="Şifre Girin..." required>
+                <br><br>
+            </div>
+
+            
+            <button type="submit">Giriş Yap</button>
+
+        </form>
+        <div class="Kayit">
+            <p>Hesabınız yok mu? <a href="KullaniciKayıt.html">Kayıt Ol</a></p>
+            <p>Admin Girişi İçin Tıklayın! <a href="admin_login.php">Admin Girişi</a></p>
+        </div>
+    </div>
+    
+</body>
+</html>

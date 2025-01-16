@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    
+}
+.navbar {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: black; 
+    padding: 10px 10px; 
+    color: white; 
+    width: 99%; /* Genişliği tam ekran yapar */ 
+    position: fixed; /* Navbar'ı ekranın üstüne sabitler */ 
+    top: 0; /* Üst boşluğu kaldırır */ 
+    left: 0;
+}
+
+.navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+h1, h2 {
+    color: #333;
+}
+
+.kategori-form {
+    margin-bottom: 20px;
+}
+
+.kategori-select, .submit-button {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.urun-tablosu {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.urun-tablosu th, .urun-tablosu td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.urun-tablosu tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.urun-tablosu th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.urun-tablosu img {
+    max-width: 100px;
+    height: auto;
+}

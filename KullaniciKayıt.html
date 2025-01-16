@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Formu</title>
+    <link rel="stylesheet" href="css/KullaniciKayıt.css">
+</head>
+<body>
+    <div class="Kayit">
+        <h2>Kayıt Formu</h2>
+        <form method="POST" action="KullaniciKayıt.php">
+            <div class="input-group">
+                <label for="isim">İsim:</label>
+                <input type="text" id="isim" name="isim" placeholder="İsim Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="soyisim">Soyisim:</label>
+                <input type="text" id="soyisim" name="soyisim" placeholder="Soyisim Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="telno">Telefon Numarası:</label>
+                <input type="telno" id="telno" name="telno" placeholder="Telefon Numarası Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="adres">Adres:</label>
+                <input type="adres" id="adres" name="adres" placeholder="Adres Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="kullaniciadi">Kullanıcı Adı:</label>
+                <input type="text" id="kullaniciadi" name="kullaniciadi" placeholder="Kullanıcı Adı Girin..." required>
+                <br><br>
+            </div>
+            <div class="input-group">
+                <label for="sifre">Şifre:</label>
+                <input type="password" id="sifre" name="sifre" placeholder="Şifre Girin..." required>
+                <br><br>
+            </div>
+            <button type="submit">Kayıt Ol</button>
+        </form> 
+        <div class="Giris">
+            Zaten bir hesabınız var mı? <a href="login.php">Giriş Yap</a>
+        </div>   
+    </div>
+    
+        
+</body>
+</html>
+

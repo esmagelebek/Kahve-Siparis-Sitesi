@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://www.biletix.com/static/images/live/event/eventimages/kahvetadimiU2N67.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.Kayit {
+    width: 100%;
+    height: max-content;
+    max-width: 400px;
+    background: rgba(245, 245, 243, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0.7, 0.7, 0.7, 0.7);
+}
+
+h2 { 
+    margin-bottom: 20px; 
+} 
+
+form div { 
+    margin-bottom: 15px; 
+    text-align: left; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 5px; 
+    color: #220e09;
+}
+input::placeholder{
+    color: #220e09;
+}
+input[type="text"], input[type="email"], input[type="password"] { 
+    width: 100%; 
+    padding: 8px; 
+    color:#220e09;
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+}
+button{
+    color: #220e09;
+    border-radius: 10px;
+    background-color: #220e09;
+    font-size: 16px;
+    padding: 10px; 
+    border: none;
+    cursor: pointer; 
+    width: 100%;
+}
+
+button.btn { 
+    background-color: #220e09; 
+    color: white; 
+    padding: 10px; 
+    border: none; 
+    border-radius: 3px; 
+    cursor: pointer; 
+    width: 100%; 
+}
+
+button.btn:hover { 
+    background-color: #220e09; 
+}
+
+.Giris { 
+    margin-top: 20px; 
+} 
+
+.Giris a { 
+    color: #220e09; 
+    text-decoration: none; 
+} 
+
+.Giris a:hover { 
+    text-decoration: underline; 
+}
