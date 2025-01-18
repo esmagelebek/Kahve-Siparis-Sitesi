@@ -19,6 +19,66 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
             <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
         </ul>
 </nav>
+<style>
+    /* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    background:url("https://cdn.kahvekulturu.com.tr/img/1/25337-b-hahve-kulturu-acildi-25337.webp") no-repeat ;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+h3 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input[type="password"],
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+}
+
+</style>
 <?php
 // Bağlantıyı kontrol et
 if (!$conn) {
@@ -47,7 +107,7 @@ if (isset($_SESSION['id'])) {
     }
 
     // Şifre değiştirme formu
-    echo "<h3>Şifre Değiştirme</h3>";
+    echo "<br><br>";
     echo "<form method='POST' action=''>
             <label>Mevcut Şifre:</label><br>
             <input type='password' name='current_password' required><br><br>

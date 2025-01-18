@@ -9,7 +9,7 @@ include('baglanti.php');
         <ul class="nav-links">
             <li><a href="anasayfa.html"><i class="fa-solid fa-house"></i>Anasayfa</a></li>
             <li><a href="category.php"><i class="bi bi-list"></i>Kategori</a></li>
-            <li><a href="profil.php"><i class="fa-regular fa-user"></i>Profil</a></li>
+            <li><a href="profil.html"><i class="fa-regular fa-user"></i>Profil</a></li>
             <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
         </ul>
 </nav>

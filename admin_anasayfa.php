@@ -85,7 +85,6 @@
         <ul class="nav-links">
             <li><a href="admin_anasayfa.php"><i class="fa-solid fa-house"></i>Anasayfa</a></li>
             <li><a href="admin_category.php"><i class="bi bi-list"></i>Kategori</a></li>
-            <li><a href="admin_profil.html"><i class="fa-regular fa-user"></i>Profil</a></li>
             <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i>Logout</a></li>
         </ul>
     </nav>
