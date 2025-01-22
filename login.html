@@ -9,7 +9,7 @@
 <body>
     <div class="login">
         <h2>Giriş Sayfasına Hoş Geldiniz...</h2>
-        <form id="loginForm" action="login.php" method="POST">
+        <form id="loginForm" action="login.php" method="POST">  <!-- metod post aksiyonu ise login.php girişi login.php sayfasında gerekli kontrolleri sağlayacak -->
             <div class="input-group">
                 <label for="kullaniciadi">Kullanıcı Adı:</label>
                 <input type="text" id="kullaniciadi" name="kullaniciadi" placeholder="Kullanıcı Adı Girin..." required>
@@ -26,8 +26,8 @@
 
         </form>
         <div class="Kayit">
-            <p>Hesabınız yok mu? <a href="KullaniciKayıt.html">Kayıt Ol</a></p>
-            <p>Admin Girişi İçin Tıklayın! <a href="admin_login.php">Admin Girişi</a></p>
+            <p>Hesabınız yok mu? <a href="KullaniciKayıt.html">Kayıt Ol</a></p>  <!-- Kayıt ola basınca Kullanıcıkayıt.html sayfasına yönlendiriyorum -->
+            <p>Admin Girişi İçin Tıklayın! <a href="admin_login.php">Admin Girişi</a></p> <!-- Admin girişine basınca admin_login.php  sayfasına yönlendiriyorum -->
         </div>
     </div>
     

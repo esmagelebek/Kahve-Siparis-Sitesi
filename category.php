@@ -1,9 +1,9 @@
-<?php
-include('baglanti.php');
+<?php     //veritabanı bağlantı ayarlarını içeren php dosyasını dahil ettim
+include('baglanti.php');  
 ?>
 <script src="https://kit.fontawesome.com/be8d131054.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-<link rel="stylesheet" href="category.css">
+<link rel="stylesheet" href="category.css">  <!-- CSS sayfamızı dahil ediyoruz gerekli yerlere stil özellikleri uygulansın diye  -->
 <nav class="navbar">
         <div class="logo">Kahve Sepeti</div>
         <ul class="nav-links">
@@ -14,26 +14,26 @@ include('baglanti.php');
         </ul>
 </nav>
 <?php
-// Oturum başlatma
+//oturum başlatma fonksiyonu oturuma giriş yapanın bilgilerini alma için $_SESSION değişkenine erişim sağlar 
 session_start();
 
-// Kategori seçimine dayalı veri çekme
+//Kategori bilgilerini alır
 if (isset($_POST['kategori'])) {
-    $kategori = $_POST['kategori'];
+    $kategori = $_POST['kategori'];  //$kategori değişkenine seçilen kategori atanır
 } else {
-    $kategori = 'varsayilan_kategori';  // Varsayılan kategori
+    $kategori = 'varsayilan_kategori';  //kategori seçilmezse varsayılan_kategori yazar
 }
-
+//seçilen kategoriye göre ürünler listelenir
 $sql = "SELECT * FROM tbl_icecek WHERE kategori='$kategori'";
 $result = $conn->query($sql);
 
 $urunler = array();
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $urunler[] = $row;
+        $urunler[] = $row; //veritabanından çekilen ürünler $ürünler dizisine eklenir
     }
 }
-
+//veritabanı bağlantısı kapatılır
 $conn->close();
 ?>
 

@@ -1,19 +1,19 @@
 <?php  
-// Veritabanı bağlantı bilgileri  
-$servername = "localhost";  
-$username = "root";  
+ 
+$servername = "localhost";  //veritabanı sunucu adı 
+$username = "root";  //veritabanı kullanıcı adı
 $password = "";  
-$dbname = "kahvesiparisi";  
+$dbname = "kahvesiparisi";  //veritabanı adı 
 
-// Bağlantı oluşturma  
-$conn = new mysqli($servername, $username, $password, $dbname);  
+  
+$conn = new mysqli($servername, $username, $password, $dbname);  //bağlantı durumunu kontrol etmemiz için gerek
 
-// Bağlantıyı kontrol et  
+//veritabanı bağlantımız doğru değilse bağlantı başarısız uyarısı alıcak
 if ($conn->connect_error) {  
     die("Bağlantı hatası: " . $conn->connect_error);  
 }  
 
-// Ürün ekleme  
+//name="add_product"  buna sahip butona basınca gerekli bilgiler post ile gelen verileri alır ve tbl_icecek tablosuna ekler
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_product"])) {  
     $isim = $_POST["isim"];  
     $fiyat = $_POST["fiyat"];  
@@ -26,14 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["add_product"])) {
     $sql = "INSERT INTO tbl_icecek (isim, fiyat, kategori, aciklama, stok, resim_url)   
             VALUES ('$isim', '$fiyat', '$kategori', '$aciklama', '$stok', '$resim_url')";  
     
-    if ($conn->query($sql) === TRUE) {  
+    if ($conn->query($sql) === TRUE) {  //sql sorgusu veritabanında doğru çalışırsa bu kısma girer
         //echo "Yeni ürün eklendi.";  
-    } else {  
+    } else {  // doğru çalışmazsa hata mesajı verir
         echo "Hata: " . $sql . "<br>" . $conn->error;  
     }  
 }  
 
-// Ürün güncelleme  
+ //name="update_product"  buna sahip butona basınca gerekli bilgiler post ile gelen verileri alır ve tbl_icecek tablosunda güncelleme yapar
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_product"])) {  
     $id = $_POST["id"];  
     $isim = $_POST["isim"];  
@@ -48,27 +48,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_product"])) {
             SET isim='$isim', fiyat='$fiyat', kategori='$kategori', aciklama='$aciklama', stok='$stok', resim_url='$resim_url'  
             WHERE id=$id";  
     
-    if ($conn->query($sql) === TRUE) {  
+    if ($conn->query($sql) === TRUE) {  //sql sorgusu veritabanında doğru çalışırsa bu kısma girer
         //echo "Ürün güncellendi.";  
-    } else {  
+    } else {  // doğru çalışmazsa hata mesajı verir
         echo "Hata: " . $sql . "<br>" . $conn->error;  
     }  
 }  
 
-// Ürün silme  
+  //name="delete_product"  buna sahip butona basınca gerekli bilgiler post ile gelen verileri alır ve tbl_icecek tablosundan siler
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["delete_product"])) {  
     $id = $_POST["id"];  
 
     $sql = "DELETE FROM tbl_icecek WHERE id=$id";  
 
-    if ($conn->query($sql) === TRUE) {  
+    if ($conn->query($sql) === TRUE) {  //sql sorgusu veritabanında doğru çalışırsa bu kısma girer
         //echo "Ürün silindi.";  
-    } else {  
+    } else {  // doğru çalışmazsa hata mesajı verir
         echo "Hata: " . $sql . "<br>" . $conn->error;  
     }  
 }  
 
-// Ürünleri listeleme  
+ //tüm ürünler ve bilgileri tbl_icecek tablosundan çeker
 $sql = "SELECT id, isim, kategori, fiyat, aciklama, stok, resim_url FROM tbl_icecek";  
 $result = $conn->query($sql);  
 ?>  
@@ -80,7 +80,7 @@ $result = $conn->query($sql);
     <title>Kategori Yönetimi</title>  
     <script src="https://kit.fontawesome.com/be8d131054.js" crossorigin="anonymous"></script>  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">  
-    <link rel="stylesheet" href="anasayfa.css">  
+    <link rel="stylesheet" href="anasayfa.css">  <!-- CSS sayfamızı dahil ediyoruz gerekli yerlere stil özellikleri uygulansın diye  -->
     <style>  
         body {  
             font-family: Arial, sans-serif;  
@@ -208,9 +208,9 @@ $result = $conn->query($sql);
     </div>  
     
     <div>  
-        <h2>Ürün Listesi</h2>  
+        <h2>Ürün Listesi</h2>  <!-- ürün listesi h2 formatında başlık olarak yazar  -->
         <table>  
-            <tr>  
+            <tr>  <!-- Sütun isimleri  -->
                 <th>İsim</th>   
                 <th>Kategori</th>  
                 <th>Fiyat</th>  
@@ -222,6 +222,7 @@ $result = $conn->query($sql);
             <?php  
             if ($result->num_rows > 0) {  
                 while($row = $result->fetch_assoc()) {  
+                    //her ürün bilgisi tabloya satır satır eklenir  ve burda düzenleme yapabilirsin o alandır burası
                     echo "<tr>  
                             <form method='post'>  
                                 <td><input type='text' name='isim' value='{$row['isim']}'></td>  

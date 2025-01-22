@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     
 
-    // Veritabanına ekleme
+   
     $sql = "INSERT INTO tbl_kullanici (isim,soyisim,email,telno,adres,kullaniciadi, sifre ) 
             VALUES (?,?,?, ?, ?, ?, ?)";
 

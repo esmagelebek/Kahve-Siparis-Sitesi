@@ -38,10 +38,10 @@
         .login-form input[type="text"],.login-form input[type="password"] {
         
             padding: 10px;
-            width: calc(100% - 20px); /* metin kutusunun boyutunu ayarlamak için */
+            width: calc(100% - 20px); 
             border: 1px solid #ccc;
             margin-top: 5px;
-            box-sizing: border-box; /* kenarları kutunun boyutuna dahil eder */
+            box-sizing: border-box; 
             border-radius: 5px;
             font-size: 14px;
         }
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Veritabanı bağlantısı
+   
     $host = "127.0.0.1";
     $username1 = "root";
     $password1 = "";
@@ -92,18 +92,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn =mysqli_connect($host, $username1,$password1,$dbname);
  
 
-// Bağlantı kontrolü
+
    if ($conn->connect_error) {
       die("Veritabanı bağlantısı başarısız: " . $conn->connect_error); 
     } 
 
-//echo "Veritabanı bağlantısı başarılı!<br>";
 
-    // Gelen verileri kontrol edelim
     echo "Gelen kullanıcı adı: " . htmlspecialchars($username) . "<br>";
     echo "Gelen şifre: " . htmlspecialchars($password) . "<br>";
 
-    // Prepared statement kullanarak SQL sorgusunu düzenleyelim
+  
     $stmt = $conn->prepare("SELECT * FROM tbl_admin WHERE username = ? AND password = ?");
     if (!$stmt) {
         die("Hazırlayıcı deyim hatası: " . $conn->error);
@@ -119,12 +117,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Sonuç alma hatası: " . $stmt->error);
     }
 
-    // Sorgu sonucunu görüntüleyelim
+ 
     echo "<pre>";
     print_r($result);
     echo "</pre>";
 
-    // Oturum başlatma ve yönlendirme
+ 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $username;
         header('Location: admin_anasayfa.php');
@@ -133,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Hatalı kullanıcı adı veya şifre.";
     }
 
-    // Bağlantıyı kapatalım
+   
     $stmt->close();
     $conn->close();
 }
